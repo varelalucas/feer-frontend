@@ -356,7 +356,7 @@ export const ModalNewProject = ({
             <div className="flex items-center gap-5 mt-5">
               <div className="w-full">
                 <h1 className="font-semibold">Plantas do projeto</h1>
-                <div className="flex items-center gap-2 w-full mt-2">
+                <div className="flex items-center gap-8 w-full mt-2">
                   <Input
                     placeholder="Link da imagem"
                     className="w-full"
