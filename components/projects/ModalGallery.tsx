@@ -27,7 +27,7 @@ export const ModalGallery = ({ images }: { images: string[] }) => {
         </Button>
       </DialogTrigger>
       <DialogContent
-        className="lg:min-w-[1400px] overflow-y-scroll max-h-screen"
+        className="lg:min-w-[1400px] overflow-y-scroll max-h-[90vh]"
         aria-setsize={800}
       >
         <DialogHeader>
