@@ -14,7 +14,8 @@ export const PortfolioImageItem = ({ photo }: { photo: string }) => {
     <Dialog>
       <DialogTrigger asChild>
         <img
-          className="cursor-pointer aspect-video w-full max-h-[342px]"
+          className="cursor-pointer w-full"
+          style={{ aspectRatio: 4 / 3 }}
           src={photo}
         />
       </DialogTrigger>

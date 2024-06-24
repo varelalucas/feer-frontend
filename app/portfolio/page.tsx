@@ -11,7 +11,7 @@ export default async function PortfolioPage() {
       <header className="py-10">
         <Navbar dark />
       </header>
-      <main className="my-[107px] flex flex-col gap-[150px]">
+      <main className="my-[107px] flex flex-col gap-[150px] max-lg:gap-10">
         {portfolios.data?.map((portfolio) => {
           return <PortfolioItem key={portfolio.id} portfolio={portfolio} />;
         })}
