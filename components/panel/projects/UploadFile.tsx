@@ -26,7 +26,7 @@ export const UploadImage = ({
         setIsLoading(true);
 
         const data = new FormData();
-        data.append("file", file);
+        data.append("image", file);
 
         await axios
           .post("https://api.imgur.com/3/image", data, {
