@@ -1,6 +1,7 @@
 "use client";
 
 import axios from "axios";
+import { Loader, Loader2 } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import { useDropzone } from "react-dropzone";
@@ -61,22 +62,20 @@ export const UploadImage = ({
         })}
       >
         <div className="flex items-center justify-center gap-4 rounded border border-dashed border-gray-300 bg-white p-5">
-          <>
-            <Image
-              src="/images/icons/upload.png"
-              alt="Ícone de upload"
-              width={156}
-              height={126}
-            />
-            <div>
-              <h1 className="text-xl font-bold max-md:text-lg">
-                Upload de imagem
-              </h1>
-              <p className="max-md:text-sm">
-                Clique aqui ou arraste uma imagem pra cá
-              </p>
-            </div>
-          </>
+          {isLoading ? (
+            <Loader2 size={80} className="loading text-4xl text-theme-400" />
+          ) : (
+            <>
+              <div>
+                <h1 className="text-xl font-bold max-md:text-lg">
+                  Upload de imagem
+                </h1>
+                <p className="max-md:text-sm">
+                  Clique aqui ou arraste uma imagem pra cá
+                </p>
+              </div>
+            </>
+          )}
         </div>
       </div>
       <input {...getInputProps({ className: "hidden" })} />

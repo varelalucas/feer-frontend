@@ -35,6 +35,7 @@ import {
   createPortfolio,
   updatePortfolio,
 } from "@/functions/portfolio";
+import { UploadImage } from "../projects/UploadFile";
 
 export const ModalNewPortfolio = ({
   portfolio,
@@ -235,41 +236,10 @@ export const ModalNewPortfolio = ({
               <div className="w-full">
                 <h1 className="font-semibold">Fotos do Portfólio</h1>
                 <div className="flex items-center gap-2 w-full mt-2">
-                  <Input
-                    placeholder="Link da imagem"
-                    className="w-full"
-                    value={photoInput}
-                    onChange={(e) => setPhotoInput(e.target.value)}
+                  <UploadImage
+                    projectPhotos={photos}
+                    setProjectPhotos={setPhotos}
                   />
-                  <Button
-                    className="w-10 aspect-square"
-                    size="icon"
-                    variant="secondary"
-                    onClick={() => {
-                      if (photoInput.length === 0) {
-                        toast.info("Falha ao adicionar imagem", {
-                          description:
-                            "O campo link da imagem não pode ser vazio",
-                        });
-
-                        return;
-                      }
-
-                      if (!photoInput.startsWith("https://")) {
-                        toast.info("Falha ao adicionar imagem", {
-                          description: "O link deve ser válido",
-                        });
-
-                        return;
-                      }
-
-                      const newPhotos = [photoInput, ...photos];
-                      setPhotos(newPhotos);
-                      setPhotoInput("");
-                    }}
-                  >
-                    <Plus />
-                  </Button>
                 </div>
               </div>
               <div className="grid grid-cols-3 gap-8 w-full">

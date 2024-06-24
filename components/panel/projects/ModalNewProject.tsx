@@ -299,35 +299,6 @@ export const ModalNewProject = ({
                     setProjectPhotos={setPhotos}
                     projectPhotos={photos}
                   />
-                  <Button
-                    className="w-10 aspect-square"
-                    size="icon"
-                    variant="secondary"
-                    onClick={() => {
-                      if (photoInput.length === 0) {
-                        toast.info("Falha ao adicionar imagem", {
-                          description:
-                            "O campo link da imagem não pode ser vazio",
-                        });
-
-                        return;
-                      }
-
-                      if (!photoInput.startsWith("https://")) {
-                        toast.info("Falha ao adicionar imagem", {
-                          description: "O link deve ser válido",
-                        });
-
-                        return;
-                      }
-
-                      const newPhotos = [photoInput, ...photos];
-                      setPhotos(newPhotos);
-                      setPhotoInput("");
-                    }}
-                  >
-                    <Plus />
-                  </Button>
                 </div>
               </div>
               <div className="grid grid-cols-3 gap-8 w-full">
@@ -358,41 +329,10 @@ export const ModalNewProject = ({
               <div className="w-full">
                 <h1 className="font-semibold">Plantas do projeto</h1>
                 <div className="flex items-center gap-8 w-full mt-2">
-                  <Input
-                    placeholder="Link da imagem"
-                    className="w-full"
-                    value={drawingInput}
-                    onChange={(e) => setDrawingInput(e.target.value)}
+                  <UploadImage
+                    setProjectPhotos={setDrawings}
+                    projectPhotos={drawings}
                   />
-                  <Button
-                    className="w-10 aspect-square"
-                    size="icon"
-                    variant="secondary"
-                    onClick={() => {
-                      if (drawingInput.length === 0) {
-                        toast.info("Falha ao adicionar imagem", {
-                          description:
-                            "O campo link da imagem não pode ser vazio",
-                        });
-
-                        return;
-                      }
-
-                      if (!drawingInput.startsWith("https://")) {
-                        toast.info("Falha ao adicionar imagem", {
-                          description: "O link deve ser válido",
-                        });
-
-                        return;
-                      }
-
-                      const newDrawings = [drawingInput, ...drawings];
-                      setDrawings(newDrawings);
-                      setDrawingInput("");
-                    }}
-                  >
-                    <Plus />
-                  </Button>
                 </div>
               </div>
               <div className="grid grid-cols-3 gap-2 w-full">
