@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 
 import { Toaster } from "@/components/ui/sonner";
+import { CookiesProvider } from "next-client-cookies/server";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -19,8 +20,10 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={montserrat.className}>
-        {children}
-        <Toaster />
+        <CookiesProvider>
+          {children}
+          <Toaster />
+        </CookiesProvider>
       </body>
     </html>
   );

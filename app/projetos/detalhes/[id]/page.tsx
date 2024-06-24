@@ -127,10 +127,10 @@ export default async function DetailsProject({
                   </Link>
                 )}
               </div>
-              <div className="grid grid-cols-1 xl:grid-cols-2 mb-[102px]">
-                <div className="lg:border-r lg:first-letter:border-theme-600">
+              <div className="flex max-lg:flex-col mb-10">
+                <div className="lg:border-r lg:first-letter:border-theme-600 basis-1/2 max-lg:basis-[100%]">
                   <div className="mb-[60px]">
-                    <h1 className="text-[50px] font-bold text-theme-400">
+                    <h1 className="text-[50px] font-bold text-theme-400 max-lg:text-4xl">
                       {project[0].val_project
                         .toLocaleString("pt-br", {
                           currency: "BRL",
@@ -138,7 +138,7 @@ export default async function DetailsProject({
                         })
                         .replace(",00", "")}
                     </h1>
-                    <p className="text-theme-600 mt-1">
+                    <p className="text-theme-600 mt-1 max-lg:text-sm">
                       {!!project[0].val_condominium &&
                         `Condomínio ${project[0].val_condominium
                           .toLocaleString("pt-br", {
@@ -156,10 +156,10 @@ export default async function DetailsProject({
                     </p>
                   </div>
                   <div className="mb-[60px]">
-                    <h1 className="text-[28px] font-semibold text-theme-800">
+                    <h1 className="text-[28px] max-lg:text-lg font-semibold text-theme-800">
                       {project[0].nm_project}
                     </h1>
-                    <p className="text-xl text-theme-600">
+                    <p className="text-xl max-lg:text-sm text-theme-600">
                       {project[0].address_project}
                     </p>
                   </div>
@@ -169,10 +169,10 @@ export default async function DetailsProject({
                         <Ruler size={32} />
                       </p>
                       <div>
-                        <h3 className="text-xl font-semibold text-theme-800">
+                        <h3 className="text-xl font-semibold text-theme-800 max-lg:text-lg">
                           Área
                         </h3>
-                        <p className="text-lg text-theme-600">
+                        <p className="text-lg max-lg:text-sm text-theme-600">
                           {project[0].val_area}m²
                         </p>
                       </div>
@@ -182,10 +182,10 @@ export default async function DetailsProject({
                         <Bed size={32} />
                       </p>
                       <div>
-                        <h3 className="text-xl font-semibold text-theme-800">
+                        <h3 className="text-xl max-lg:text-lg font-semibold text-theme-800">
                           Quartos
                         </h3>
-                        <p className="text-lg text-theme-600">
+                        <p className="text-lg max-lg:text-sm text-theme-600">
                           {project[0].num_bedrooms}
                         </p>
                       </div>
@@ -195,10 +195,10 @@ export default async function DetailsProject({
                         <ShowerHead size={32} />
                       </p>
                       <div>
-                        <h3 className="text-xl font-semibold text-theme-800">
+                        <h3 className="text-xl max-lg:text-lg font-semibold text-theme-800">
                           Banheiros
                         </h3>
-                        <p className="text-lg text-theme-600">
+                        <p className="text-lg max-lg:text-sm text-theme-600">
                           {project[0].num_bathrooms}
                         </p>
                       </div>
@@ -208,10 +208,10 @@ export default async function DetailsProject({
                         <Bath size={32} />
                       </p>
                       <div>
-                        <h3 className="text-xl font-semibold text-theme-800">
+                        <h3 className="text-xl max-lg:text-lg font-semibold text-theme-800">
                           Suítes
                         </h3>
-                        <p className="text-lg text-theme-600">
+                        <p className="text-lg max-lg:text-sm text-theme-600">
                           {project[0].num_suits}
                         </p>
                       </div>
@@ -221,10 +221,10 @@ export default async function DetailsProject({
                         <Cat size={32} />
                       </p>
                       <div>
-                        <h3 className="text-xl font-semibold text-theme-800">
+                        <h3 className="text-xl max-lg:text-lg font-semibold text-theme-800">
                           Aceita Pets?
                         </h3>
-                        <p className="text-lg text-theme-600">
+                        <p className="text-lg max-lg:text-sm text-theme-600">
                           {project[0].pet_friendly ? "Sim" : "Não"}
                         </p>
                       </div>
@@ -234,17 +234,17 @@ export default async function DetailsProject({
                         <CarFront size={32} />
                       </p>
                       <div>
-                        <h3 className="text-xl font-semibold text-theme-800">
+                        <h3 className="text-xl max-lg:text-lg font-semibold text-theme-800">
                           Vagas
                         </h3>
-                        <p className="text-lg text-theme-600">
+                        <p className="text-lg max-lg:text-sm text-theme-600">
                           {project[0].num_garage}
                         </p>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="flex flex-col items-center mt-10 md:mt-0">
+                <div className="flex flex-col items-center mt-10 md:mt-0 basis-1/2 max-lg:basis-[100%]">
                   <div className="max-w-[588px]">
                     <div>
                       <h1 className="text-2xl font-semibold text-theme-700">

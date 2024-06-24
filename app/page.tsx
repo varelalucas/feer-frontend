@@ -1,7 +1,15 @@
+import { CarouselHome } from "@/components/home/Carousel";
 import { Footer } from "@/components/home/Footer";
 import { Navbar } from "@/components/home/Navbar";
 import { ProjectsCard } from "@/components/projects/ProjectsCard";
 import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { getAllProjects } from "@/functions/projects";
 import { getAllTestimonials } from "@/functions/testimonials";
 import { Ruler } from "lucide-react";
@@ -27,37 +35,53 @@ export default async function Home() {
         style={{
           background: "url(/images/background/bg-1.png) no-repeat",
           backgroundSize: "cover",
+          backgroundPosition: "center center",
         }}
         className="py-10"
       >
         <Navbar />
-        <div className="container my-[170px]">
-          <div className="flex flex-col items-center justify-center text-center lg:items-start lg:text-left">
+        <div className="container my-[80px] xl:my-[170px]">
+          <div className="flex flex-col items-start justify-center text-left">
             <div className="xl:-ml-10 max-w-[250px] md:max-w-full">
               <Image
                 src="/images/assets/title.png"
                 width={471}
                 height={234}
-                alt="Logo"
+                alt="Titulo"
               />
             </div>
-            <p className="mt-10 mb-3 text-sm font-bold uppercase text-white">
+            <p className="mt-10 mb-3 text-xs lg:text-sm font-bold uppercase text-white">
               Construção Civil - Incorporação Imobiliária
             </p>
-            <p className="text-xl text-white max-w-[310px] mb-5">
+            <p className="text-md lg:text-xl text-white max-w-[310px] mb-5">
               A chave dos seus sonhos está te esperando!
             </p>
             <Link href="/whatsapp">
-              <Button className="text-xl" size="lg">
-                Contate-nos
-              </Button>
+              <div className="block lg:hidden">
+                <Button className="text-sm">Contate-nos</Button>
+              </div>
+              <div className="hidden lg:block">
+                <Button className="text-xl" size="lg">
+                  Contate-nos
+                </Button>
+              </div>
             </Link>
           </div>
         </div>
       </header>
       <main>
-        <section className="container flex justify-between items-center mt-[221px] mb-[263px] gap-16 flex-col lg:flex-row">
-          <div className="w-full max-w-[640px]">
+        <section className="container flex justify-between items-center mt-[72px] lg:mt-[221px] mb-[144px] lg:mb-[263px] gap-16 flex-col lg:flex-row">
+          <div className="block lg:hidden w-full text-left">
+            <div className="text-left">
+              <h3 className="font-semibold text-sm text-theme-800">
+                BEM VINDOS À NOSSA EMPRESA
+              </h3>
+              <h1 className="font-bold text-2xl text-theme-400">
+                CONHEÇA A<br /> FEER CONSTRUTORA
+              </h1>
+            </div>
+          </div>
+          <div className="w-full max-w-[600px]">
             <Image
               src="/images/assets/meet.png"
               width={640}
@@ -66,15 +90,17 @@ export default async function Home() {
             />
           </div>
           <div className="w-fit">
-            <div className="lg:-ml-28">
-              <h3 className="font-semibold text-theme-800">
-                BEM VINDOS À NOSSA EMPRESA
-              </h3>
-              <h1 className="font-bold text-5xl text-theme-400">
-                CONHEÇA A<br /> FEER CONSTRUTORA
-              </h1>
+            <div className="hidden lg:block">
+              <div className="lg:-ml-14">
+                <h3 className="font-semibold text-theme-800">
+                  BEM VINDOS À NOSSA EMPRESA
+                </h3>
+                <h1 className="font-bold text-5xl text-theme-400">
+                  CONHEÇA A<br /> FEER CONSTRUTORA
+                </h1>
+              </div>
             </div>
-            <p className="mt-16 text-theme-600">
+            <p className="mt-4 lg:mt-12 text-theme-600 lg:text-justify">
               A FEER Construtora, fundada em 2013 na região serrana do Rio de
               Janeiro, iniciou no mercado de manutenção e reformas de
               supermercados, expandindo rapidamente devido à qualidade de seus
@@ -93,15 +119,18 @@ export default async function Home() {
           </div>
         </section>
         {!!testimonials.data && testimonials.data.length > 0 && (
-          <section className="container mb-[299px]">
-            <div className="flex flex-col w-full text-center items-center justify-center mb-[93px]">
+          <section className="container mb-[113px] lg:mb-[299px]">
+            <div className="flex flex-col w-full lg:text-center items-start text-start lg:items-center lg:justify-center mb-[93px]">
               <h3 className="font-semibold text-theme-800">DEPOIMENTOS</h3>
-              <h1 className="font-bold text-5xl text-theme-400">
+              <h1 className="font-bold text-2xl lg:text-5xl text-theme-400">
                 O QUE NOSSOS <br /> CLIENTES DIZEM
               </h1>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-              <div className="flex items-center justify-center flex-col text-center">
+            <div className="block lg:hidden">
+              <CarouselHome testimonials={testimonials.data || []} />
+            </div>
+            <div className="grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 hidden lg:grid">
+              <div className="flex items-center justify-center flex-col text-center aspect-square">
                 <svg
                   width="71"
                   height="49"
@@ -114,7 +143,7 @@ export default async function Home() {
                     fill="#C83538"
                   />
                 </svg>
-                <p className="max-w-[350px] w-full mt-10 text-xl text-theme-600">
+                <p className="max-w-[350px] w-full mt-10 text-sm lg:text-xl text-theme-600">
                   {testimonials.data[0].testimonial}
                 </p>
                 <h3 className="text-lg font-bold text-theme-600 mt-6">
@@ -136,7 +165,7 @@ export default async function Home() {
                     />
                   </svg>
 
-                  <p className="max-w-[350px] w-full mt-10 text-xl text-white">
+                  <p className="max-w-[350px] w-full mt-10 text-sm lg:text-xl text-white">
                     {testimonials.data[1].testimonial}
                   </p>
                   <h3 className="text-lg font-bold text-white mt-6">
@@ -146,7 +175,7 @@ export default async function Home() {
                 <div className="bg-theme-500 w-[91.5px] h-[63px] ml-[48px] clipy" />
               </div>
 
-              <div className="flex items-center justify-center flex-col text-center">
+              <div className="flex items-center justify-center flex-col text-center aspect-square">
                 <svg
                   width="71"
                   height="49"
@@ -162,15 +191,26 @@ export default async function Home() {
                 <p className="max-w-[350px] w-full mt-10 text-xl text-theme-600">
                   {testimonials.data[2].testimonial}
                 </p>
-                <h3 className="text-lg font-bold text-theme-600 mt-6">
+                <h3 className="text-sm lg:text-xl font-bold text-theme-600 mt-6">
                   {testimonials.data[2].nm_person}
                 </h3>
               </div>
             </div>
           </section>
         )}
-        <section className="mb-[166px] container flex flex-col lg:flex-row gap-10 lg:gap-0 items-center justify-between">
-          <div>
+        <div className="lg:hidden w-gull">
+          <Image
+            src="/images/assets/why.png"
+            width={1000}
+            height={350}
+            alt="Diferenciais da Feers"
+          />
+          <div className="container text-[30px] font-bold text-theme-500 uppercase w-full mt-10">
+            <h1>Por que escolher a Feer?</h1>
+          </div>
+        </div>
+        <section className="mb-[166px] container flex flex-col lg:flex-row gap-10 lg:gap-0 items-center justify-between mt-10">
+          <div className="max-lg:hidden">
             <Image
               src="/images/assets/diferentials.png"
               width={631}
@@ -178,6 +218,7 @@ export default async function Home() {
               alt="Diferenciais da Feers"
             />
           </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-[79px]">
             <div className="text-center flex flex-col items-center justify-center max-w-[313px] w-full">
               <svg
@@ -205,10 +246,10 @@ export default async function Home() {
                   />
                 </g>
               </svg>
-              <h1 className="font-semibold text-xl text-theme-800 my-3">
+              <h1 className="font-semibold text-xl text-theme-800 my-3 max-lg:text-lg">
                 Equipe experiente
               </h1>
-              <p className="text-xl text-theme-700">
+              <p className="text-xl text-theme-700 max-lg:text-lg">
                 Equipe talentosa e experiente, garantindo excelência e
                 eficiência em cada projeto
               </p>

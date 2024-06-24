@@ -8,15 +8,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-
 import { type Project } from "@/functions/projects";
 import { ImagesMarquee } from "./Marquee";
 
