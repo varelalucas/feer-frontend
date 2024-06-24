@@ -16,37 +16,39 @@ export const UploadImage = ({
   setProjectPhotos: any;
   projectPhotos: any;
 }) => {
-  const [files, setFiles] = useState<FileWithPreview[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const { getRootProps, getInputProps, acceptedFiles } = useDropzone({
+  const { getRootProps, getInputProps } = useDropzone({
     multiple: false,
     accept: { "image/*": [".jpg", ".jpeg", ".png"] },
     onDrop: async (acceptedFiles: File[]) => {
-      acceptedFiles.map(async (file) => {
-        setIsLoading(true);
+      setIsLoading(true);
+      const file = acceptedFiles[0];
 
-        const data = new FormData();
-        data.append("image", file);
+      if (file) {
+        const formData = new FormData();
+        formData.append("image", file);
 
-        await axios
-          .post("https://api.imgur.com/3/image", data, {
-            headers: {
-              Accept: "application/json",
-              Authorization: "Client-ID 81ebd9cffaa9305",
-            },
-          })
-          .then((response) => {
-            console.log(response);
-          })
-          .catch((error) => {
-            console.log(error);
-          })
-          .finally(() => {
-            setIsLoading(false);
-          });
-
-        setProjectPhotos([...projectPhotos, URL.createObjectURL(file)]);
-      });
+        try {
+          const response = await axios.post(
+            "https://api.imgur.com/3/image",
+            formData,
+            {
+              headers: {
+                Accept: "application/json",
+                Authorization: "Client-ID 81ebd9cffaa9305",
+              },
+            }
+          );
+          console.log(response);
+          if (response.data && response.data.data && response.data.data.link) {
+            setProjectPhotos([...projectPhotos, response.data.data.link]);
+          }
+        } catch (error) {
+          console.log(error);
+        } finally {
+          setIsLoading(false);
+        }
+      }
     },
   });
 
@@ -75,7 +77,6 @@ export const UploadImage = ({
               </p>
             </div>
           </>
-          )
         </div>
       </div>
       <input {...getInputProps({ className: "hidden" })} />
