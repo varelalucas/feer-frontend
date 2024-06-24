@@ -46,6 +46,7 @@ import { SelectValue } from "@radix-ui/react-select";
 import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
 import { useRouter } from "next/navigation";
+import { UploadImage } from "./UploadFile";
 
 export const ModalNewProject = ({
   project,
@@ -66,6 +67,8 @@ export const ModalNewProject = ({
   const [drawingInput, setDrawingInput] = useState("");
   const [times, setTimes] = useState(1);
   const [status, setStatus] = useState(false);
+
+  const [isPhotoLoading, setIsPhotoLoading] = useState(false);
 
   const router = useRouter();
 
@@ -292,11 +295,9 @@ export const ModalNewProject = ({
               <div className="w-full">
                 <h1 className="font-semibold">Fotos do projeto</h1>
                 <div className="flex items-center gap-2 w-full mt-2">
-                  <Input
-                    placeholder="Link da imagem"
-                    className="w-full"
-                    value={photoInput}
-                    onChange={(e) => setPhotoInput(e.target.value)}
+                  <UploadImage
+                    setProjectPhotos={setPhotos}
+                    projectPhotos={photos}
                   />
                   <Button
                     className="w-10 aspect-square"

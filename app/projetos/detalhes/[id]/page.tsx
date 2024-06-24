@@ -3,7 +3,7 @@ import { Navbar } from "@/components/home/Navbar";
 import { ImagesMarquee } from "@/components/projects/Marquee";
 import { ProjectsCard } from "@/components/projects/ProjectsCard";
 import { Button } from "@/components/ui/button";
-import { getAllProjects } from "@/functions/projects";
+import { Project, getAllProjects } from "@/functions/projects";
 import { Bath, Bed, CarFront, Cat, Ruler, ShowerHead } from "lucide-react";
 import Link from "next/link";
 
@@ -14,7 +14,7 @@ export async function generateStaticParams() {
   const projects = await getAllProjects({}, 0, 10000);
 
   if (!!projects && !!projects.data) {
-    return projects.data.map((project) => {
+    return projects.data.map((project: Project) => {
       return {
         id: project.id.toString(),
       };
@@ -32,8 +32,6 @@ export default async function DetailsProject({
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
   const selectedShow = (searchParams?.show || "photos") as string;
-  const modal = (searchParams?.show || "false") as string;
-  const image = (searchParams?.image || "") as string;
 
   const { id } = params;
 
@@ -277,7 +275,7 @@ export default async function DetailsProject({
                     Veja também:
                   </h1>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[34px] mt-[32px] mb-[150px]">
-                    {projects.data.map((project) => {
+                    {projects.data.map((project: Project) => {
                       return (
                         <ProjectsCard key={project.id} project={project} />
                       );
