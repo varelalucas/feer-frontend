@@ -1,5 +1,4 @@
 import { Navbar } from "@/components/home/Navbar";
-import { Selector } from "@/components/projects/Selector";
 import { Button } from "@/components/ui/button";
 import { getAllProjects } from "@/functions/projects";
 import Link from "next/link";
@@ -7,7 +6,6 @@ import Link from "next/link";
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
   PaginationLink,
   PaginationNext,
@@ -37,10 +35,10 @@ export default async function DisponibleProjects({
       </header>
       <main className="mt-[88px] container">
         <div>
-          <div className="text-theme-700 font-semibold text-3xl mb-4">
+          <div className="text-theme-700 font-semibold text-3xl mb-4 max-lg:text-xl">
             {projects.total} Projetos Disponíveis
           </div>
-          <div className="flex items-center gap-8 mb-[50px]">
+          <div className="flex items-center gap-8 mb-[50px] max-lg:hidden">
             <Link
               href={`?${new URLSearchParams({
                 page: "0",
@@ -65,6 +63,34 @@ export default async function DisponibleProjects({
                 variant={selectedType === "ALUGUEL" ? "default" : "outline"}
                 size="lg"
                 className="text-xl"
+              >
+                ALUGUEL
+              </Button>
+            </Link>
+          </div>
+          <div className="flex items-center gap-8 mb-[50px] lg:hidden">
+            <Link
+              href={`?${new URLSearchParams({
+                page: "0",
+                type: "COMPRA",
+              })}`}
+            >
+              <Button
+                variant={selectedType === "COMPRA" ? "default" : "outline"}
+                className="text-md"
+              >
+                COMPRA
+              </Button>
+            </Link>
+            <Link
+              href={`?${new URLSearchParams({
+                page: "0",
+                type: "ALUGUEL",
+              })}`}
+            >
+              <Button
+                variant={selectedType === "ALUGUEL" ? "default" : "outline"}
+                className="text-md"
               >
                 ALUGUEL
               </Button>

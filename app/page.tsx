@@ -3,16 +3,8 @@ import { Footer } from "@/components/home/Footer";
 import { Navbar } from "@/components/home/Navbar";
 import { ProjectsCard } from "@/components/projects/ProjectsCard";
 import { Button } from "@/components/ui/button";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import { getAllProjects } from "@/functions/projects";
 import { getAllTestimonials } from "@/functions/testimonials";
-import { Ruler } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -91,7 +83,7 @@ export default async function Home() {
           </div>
           <div className="w-fit">
             <div className="hidden lg:block">
-              <div className="lg:-ml-14">
+              <div>
                 <h3 className="font-semibold text-theme-800">
                   BEM VINDOS À NOSSA EMPRESA
                 </h3>
@@ -362,13 +354,14 @@ export default async function Home() {
           </div>
         </section>
         <section>
-          <div className="mx-14 flex items-center justify-between">
+          <div className="mx-14 flex items-center justify-between max-lg:flex-col">
             <svg
               width="390"
               height="347"
               viewBox="0 0 390 347"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              className="max-lg:hidden"
             >
               <path
                 d="M48.8891 25L1 31.4444V86.5556L48.8891 91M48.8891 25L97 31.4444V86.5556L48.8891 91M48.8891 25V91"
@@ -391,11 +384,11 @@ export default async function Home() {
                 stroke="#B6B6B6"
               />
             </svg>
-            <div className="max-w-[672px] text-center">
-              <h3 className="uppercase text-lg text-theme-700 font-semibold">
+            <div className="max-w-[672px] text-center max-lg:max-w-full max-lg:w-full">
+              <h3 className="uppercase text-lg text-theme-700 font-semibold max-lg:text-sm">
                 Empreendimentos
               </h3>
-              <h1 className="text-4xl text-theme-400 font-semibold mt-3">
+              <h1 className="text-4xl text-theme-400 font-semibold mt-3 max-lg:text-xl">
                 Explore as oportunidades exclusivas que reservamos para você!
               </h1>
             </div>
@@ -405,6 +398,7 @@ export default async function Home() {
               viewBox="0 0 435 373"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              className="max-lg:hidden"
             >
               <path
                 d="M69.8891 1L22 7.44444V62.5556L69.8891 67M69.8891 1L118 7.44444V62.5556L69.8891 67M69.8891 1V67"
@@ -434,11 +428,11 @@ export default async function Home() {
           </div>
           <div className="mt-20 container mb-[117px]">
             <div className="flex items-center gap-9 mb-3">
-              <h1 className="text-3xl font-medium text-theme-700">
+              <h1 className="text-3xl font-medium text-theme-700 max-lg:text-lg">
                 Disponíveis para morar
               </h1>
               <Link
-                className="text-xl font-semibold uppercase underline text-theme-500"
+                className="text-xl font-semibold uppercase underline text-theme-500 max-lg:text-sm"
                 href="/projetos/disponiveis"
               >
                 Ver Tudo
@@ -460,11 +454,11 @@ export default async function Home() {
           </div>
           <div className="mt-20 container mb-[117px]">
             <div className="flex items-center gap-9 mb-3">
-              <h1 className="text-3xl font-medium text-theme-700">
+              <h1 className="text-3xl font-medium text-theme-700 max-lg:text-lg">
                 Projetos futuros
               </h1>
               <Link
-                className="text-xl font-semibold uppercase underline text-theme-500"
+                className="text-xl font-semibold uppercase underline text-theme-500 max-lg:text-sm"
                 href="/projetos/futuros"
               >
                 Ver Tudo

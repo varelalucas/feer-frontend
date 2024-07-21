@@ -82,10 +82,10 @@ export const CarouselHome = ({
                   fill="#C83538"
                 />
               </svg>
-              <p className="max-w-[350px] w-full mt-10 text-xl text-theme-600">
+              <p className="max-w-[350px] w-full mt-10 text-sm lg:text-xl text-theme-600">
                 {testimonials[2].testimonial}
               </p>
-              <h3 className="text-sm lg:text-xl font-bold text-theme-600 mt-6">
+              <h3 className="text-lg font-bold text-theme-600 mt-6">
                 {testimonials[2].nm_person}
               </h3>
             </div>
