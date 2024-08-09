@@ -1,10 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "../ui/button";
-import { Menu } from "lucide-react";
 import { MobileNavbar } from "./MobileNavbar";
+import { usePathname } from "next/navigation";
 
 export const Navbar = ({ dark }: { dark?: boolean }) => {
+  const pathname = usePathname();
+
   return (
     <>
       <nav className="hidden lg:block">
@@ -23,19 +27,39 @@ export const Navbar = ({ dark }: { dark?: boolean }) => {
                 dark ? "text-black" : "text-white"
               }`}
             >
-              <li>
+              <li
+                className={
+                  pathname.includes("/projetos/disponiveis")
+                    ? "text-theme-400 font-bold transition-all"
+                    : "hover:text-theme-400 transition-all"
+                }
+              >
                 <Link href="/projetos/disponiveis">Projetos Disponíveis</Link>
               </li>
-              <li>
+              <li
+                className={
+                  pathname.includes("/projetos/futuros")
+                    ? "text-theme-400 font-bold transition-all"
+                    : "hover:text-theme-400 transition-all"
+                }
+              >
                 <Link href="/projetos/futuros">Projetos Futuros</Link>
               </li>
-              <li>
+              <li
+                className={
+                  pathname.includes("/portfolio")
+                    ? "text-theme-400 font-bold transition-all"
+                    : "hover:text-theme-400 transition-all"
+                }
+              >
                 <Link href="/portfolio">Portfólio</Link>
               </li>
             </ul>
           </div>
-          <Link href="/whatsapp">
-            <Button size="lg">Fale conosco</Button>
+          <Link href="/whatsapp" target="_blank">
+            <Button className="text-2xl px-[30px] py-[15px] h-[45px] rounded-sm bg-theme-500">
+              Fale conosco
+            </Button>
           </Link>
         </div>
       </nav>

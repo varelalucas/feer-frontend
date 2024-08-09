@@ -77,7 +77,7 @@ export const MobileNavbar = ({ dark }: { dark?: boolean }) => {
             </li>
           </ul>
           <div>
-            <Link href="/whatsapp">
+            <Link href="/whatsapp" target="_blank">
               <Button variant="outline" size="lg" className="text-xl w-full">
                 Fale conosco
               </Button>

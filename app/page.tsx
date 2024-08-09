@@ -50,12 +50,17 @@ export default async function Home() {
             <p className="text-md lg:text-xl text-white max-w-[310px] mb-5">
               A chave dos seus sonhos está te esperando!
             </p>
-            <Link href="/whatsapp">
+            <Link href="/whatsapp" target="_blank">
               <div className="block lg:hidden">
-                <Button className="text-sm">Contate-nos</Button>
+                <Button className="text-sm px-[30px] py-[15px] h-[45px]  rounded-sm bg-theme-500">
+                  Contate-nos
+                </Button>
               </div>
               <div className="hidden lg:block">
-                <Button className="text-xl" size="lg">
+                <Button
+                  className="text-2xl px-[30px] py-[15px] h-[45px]  rounded-sm bg-theme-500"
+                  size="lg"
+                >
                   Contate-nos
                 </Button>
               </div>
@@ -70,7 +75,7 @@ export default async function Home() {
               <h3 className="font-semibold text-sm text-theme-800">
                 BEM VINDOS À NOSSA EMPRESA
               </h3>
-              <h1 className="font-bold text-2xl text-theme-400">
+              <h1 className="font-bold text-[28px] text-theme-500">
                 CONHEÇA A<br /> FEER CONSTRUTORA
               </h1>
             </div>
@@ -116,7 +121,7 @@ export default async function Home() {
           <section className="container mb-[113px] lg:mb-[299px]">
             <div className="flex flex-col w-full lg:text-center items-start text-start lg:items-center lg:justify-center mb-[93px]">
               <h3 className="font-semibold text-theme-800">DEPOIMENTOS</h3>
-              <h1 className="font-bold text-2xl lg:text-5xl text-theme-400">
+              <h1 className="font-bold text-3xl lg:text-5xl text-theme-400">
                 O QUE NOSSOS <br /> CLIENTES DIZEM
               </h1>
             </div>
@@ -204,7 +209,7 @@ export default async function Home() {
             height={350}
             alt="Diferenciais da Feers"
           />
-          <div className="container text-[30px] font-bold text-theme-500 uppercase w-full mt-10">
+          <div className="container text-3xl font-bold text-theme-500 uppercase w-full mt-10">
             <h1>Por que escolher a Feer?</h1>
           </div>
         </div>
@@ -395,7 +400,7 @@ export default async function Home() {
               <h3 className="uppercase text-lg text-theme-700 font-semibold max-lg:text-sm">
                 Empreendimentos
               </h3>
-              <h1 className="text-4xl text-theme-400 font-semibold mt-3 max-lg:text-xl">
+              <h1 className="text-4xl text-theme-400 font-semibold mt-3 max-lg:text-2xl">
                 Explore as oportunidades exclusivas que reservamos para você!
               </h1>
             </div>

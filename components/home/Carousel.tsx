@@ -17,8 +17,8 @@ export const CarouselHome = ({
   return (
     <>
       <Carousel>
-        <CarouselPrevious />
-        <CarouselNext />
+        <CarouselPrevious className="bg-white text-theme-400" />
+        <CarouselNext className="bg-white text-theme-400" />
         <CarouselContent>
           {!!testimonials[0] && (
             <CarouselItem>
@@ -47,7 +47,7 @@ export const CarouselHome = ({
           {!!testimonials[1] && (
             <CarouselItem>
               <div>
-                <div className="flex items-center justify-center flex-col text-center p-10 bg-theme-400 aspect-square">
+                <div className="flex items-center justify-center flex-col text-center p-10 bg-theme-500 aspect-square">
                   <svg
                     width="78"
                     height="55"

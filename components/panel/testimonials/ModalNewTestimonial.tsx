@@ -3,19 +3,17 @@
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "../../ui/button";
-import { Loader, Loader2, Plus } from "lucide-react";
+import { Loader2, Plus } from "lucide-react";
 import { Label } from "../../ui/label";
 import { Input } from "../../ui/input";
 import { DialogClose } from "@radix-ui/react-dialog";
 import { useState } from "react";
-import { createUser } from "@/functions/users";
 import { toast } from "sonner";
 import { createTestimonial } from "@/functions/testimonials";
 import { Textarea } from "@/components/ui/textarea";
@@ -86,7 +84,14 @@ export const ModalNewTestimonial = ({ token }: { token: string }) => {
               className="col-span-3"
               onChange={(e) => setTestimonial(e.target.value)}
               rows={8}
+              maxLength={420}
             />
+            <div></div>
+            <div className="col-span-3">
+              <p>
+                <b>{testimonial.length}</b> / 420
+              </p>
+            </div>
           </div>
         </div>
         <DialogFooter className="grid grid-cols-4 gap-2">

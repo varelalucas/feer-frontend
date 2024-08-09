@@ -7,7 +7,7 @@ export const ProjectsCard = ({ project }: { project: Project }) => {
       className="rounded-lg overflow-hidden"
       href={`/projetos/detalhes/${project.id}`}
     >
-      <img className="aspect-video" src={project.arr_photos[0]} />
+      <img style={{ aspectRatio: 4 / 3 }} src={project.arr_photos[0]} />
       <div className="py-3 px-5 bg-[#F9F9F9]">
         <div className="flex items-center gap-1">
           <svg

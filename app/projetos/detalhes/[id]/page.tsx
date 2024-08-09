@@ -1,6 +1,5 @@
 import { Footer } from "@/components/home/Footer";
 import { Navbar } from "@/components/home/Navbar";
-import { ImagesMarquee } from "@/components/projects/Marquee";
 import { ProjectsCard } from "@/components/projects/ProjectsCard";
 import { Button } from "@/components/ui/button";
 import { Project, getAllProjects } from "@/functions/projects";
@@ -256,7 +255,7 @@ export default async function DetailsProject({
                       <h1 className="text-2xl font-bold text-theme-500 max-w-[276px] text-center">
                         Gostou desse imóvel? Ele pode ser seu!
                       </h1>
-                      <Link href="/whatsapp">
+                      <Link href="/whatsapp" target="_blank">
                         <Button
                           size="lg"
                           variant="secondary"
