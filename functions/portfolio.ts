@@ -31,6 +31,8 @@ export const getAllPortfolio = cache(
       false
     );
 
+    console.log(request);
+
     return request;
   }
 );
@@ -42,6 +44,8 @@ export const createPortfolio = async (data: any, token: string) => {
     "POST",
     token
   );
+
+  console.log(request);
 
   revalidatePath("/panel/portfolio");
   revalidatePath("/portfolio");
@@ -60,6 +64,8 @@ export const deletePortfolio = async (
     token
   );
 
+  console.log(request);
+
   revalidatePath("/panel/portfolio");
   revalidatePath("/portfolio");
 
@@ -73,6 +79,8 @@ export const updatePortfolio = async (id: number, data: any, token: string) => {
     "PUT",
     token
   );
+
+  console.log(request);
 
   revalidatePath("/panel/portfolio");
   revalidatePath("/portfolio");

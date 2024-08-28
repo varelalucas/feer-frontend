@@ -34,7 +34,7 @@ export const getAllProjects = cache(
     pageSize = 10,
     token?: string
   ): Promise<APIRequestGeneric<Project[]>> => {
-    return await API.request(
+    const request = await API.request(
       `/projects/all?filter=${JSON.stringify(
         filter
       )}&page=${page}&pageSize=${pageSize}`,
@@ -42,6 +42,10 @@ export const getAllProjects = cache(
       "GET",
       !!token ? token : false
     );
+
+    console.log(request);
+
+    return request;
   }
 );
 
@@ -55,6 +59,8 @@ export const deleteProject = async (
     "DELETE",
     token
   );
+
+  console.log(request);
 
   revalidatePath("/panel/projects");
   revalidatePath("/projetos/disponiveis");
@@ -72,6 +78,8 @@ export const updateProject = async (id: number, data: any, token: string) => {
     token
   );
 
+  console.log(request);
+
   revalidatePath("/panel/projects");
   revalidatePath("/projetos/disponiveis");
   revalidatePath("/projetos/futuros");
@@ -87,6 +95,8 @@ export const createProject = async (data: any, token: string) => {
     "POST",
     token
   );
+
+  console.log(request);
 
   revalidatePath("/panel/projects");
   revalidatePath("/projetos/disponiveis");

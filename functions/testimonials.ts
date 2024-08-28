@@ -28,6 +28,8 @@ export const deleteTestimonial = async (
     token
   );
 
+  console.log(request);
+
   revalidatePath("/panel/testimonials");
   revalidatePath("/");
 
@@ -45,6 +47,8 @@ export const createTestimonial = async (
     "POST",
     token
   );
+
+  console.log(request);
 
   revalidatePath("/panel/testimonials");
   revalidatePath("/");

@@ -29,6 +29,8 @@ export const login = async (
     false
   );
 
+  console.log(request);
+
   if (request.status === 200) {
     await createCookie("auth:token", request.data.token).then();
   }
@@ -75,6 +77,8 @@ export const createUser = async (
     token
   );
 
+  console.log(request);
+
   revalidatePath("/panel");
 
   return request;
@@ -85,6 +89,8 @@ export const deleteUser = async (
   token: string
 ): Promise<APIRequestGeneric<User>> => {
   const request = await API.request(`/users/delete/${id}`, {}, "DELETE", token);
+
+  console.log(request);
 
   revalidatePath("/panel");
 
