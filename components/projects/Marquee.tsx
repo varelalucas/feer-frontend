@@ -12,13 +12,21 @@ export const ImagesMarquee = ({ photo }: { photo: string }) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <img className="cursor-pointer aspect-video w-full" src={photo} />
+        <img
+          className="cursor-pointer w-full"
+          style={{ aspectRatio: 4 / 3 }}
+          src={photo}
+        />
       </DialogTrigger>
       <DialogContent className="lg:min-w-[1400px]" aria-setsize={800}>
         <DialogHeader>
           <DialogTitle>Visualização da imagem</DialogTitle>
         </DialogHeader>
-        <img className="aspect-video marquee-item w-[90vw]" src={photo} />
+        <img
+          className="marquee-item w-[90vw]"
+          style={{ aspectRatio: 4 / 3 }}
+          src={photo}
+        />
       </DialogContent>
     </Dialog>
   );
