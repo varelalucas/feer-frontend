@@ -1,5 +1,4 @@
 import { getLocalUser } from "@/functions/users";
-import { headers } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
 

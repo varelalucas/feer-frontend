@@ -247,7 +247,7 @@ export default async function DetailsProject({
                       <h1 className="text-2xl font-semibold text-theme-700">
                         Sobre o imóvel
                       </h1>
-                      <p className="text-xl text-theme-600 mt-3">
+                      <p className="text-lg text-theme-600 mt-3">
                         {project[0].ds_project}
                       </p>
                     </div>
@@ -270,7 +270,7 @@ export default async function DetailsProject({
               </div>
               {!!projects.data && projects.data.length > 0 && (
                 <div>
-                  <h1 className="text-4xl text-theme-700 font-semibold">
+                  <h1 className="text-2xl text-theme-700 font-semibold">
                     Veja também:
                   </h1>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[34px] mt-[32px] mb-[150px]">

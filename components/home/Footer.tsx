@@ -1,9 +1,8 @@
 "use client";
 
-import { Instagram, Youtube } from "lucide-react";
+import { Instagram } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "../ui/button";
 
 export const Footer = () => {
   return (
@@ -29,11 +28,8 @@ export const Footer = () => {
           </ul>
           <div className="text-right flex flex-col items-center lg:items-end">
             <div className="flex text-white items-center gap-2">
-              <Link href="/instagram">
+              <Link href="https://instagram.com/feerconstrutora">
                 <Instagram />
-              </Link>
-              <Link href="/youtube">
-                <Youtube />
               </Link>
             </div>
             <span className="text-[10px] text-white mt-3">

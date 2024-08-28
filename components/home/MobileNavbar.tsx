@@ -30,7 +30,7 @@ export const MobileNavbar = ({ dark }: { dark?: boolean }) => {
           <Link href="/">
             <Image
               src="/images/brand/icon.png"
-              width={95}
+              width={75}
               height={69}
               alt="Logo"
             />

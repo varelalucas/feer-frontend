@@ -16,7 +16,7 @@ export const Navbar = ({ dark }: { dark?: boolean }) => {
           <div className="flex items-center gap-20">
             <Link href="/">
               <Image
-                src="/images/brand/icon.png"
+                src="/images/brand/logo.svg"
                 width={95}
                 height={69}
                 alt="Logo"

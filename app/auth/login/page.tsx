@@ -2,11 +2,10 @@
 
 import { Button } from "@/components/ui/button";
 import { login } from "@/functions/users";
-import { createCookie } from "@/lib/cookies";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { toast } from "sonner";
 
@@ -57,7 +56,7 @@ export default function LoginPage() {
       <div className="bg-white p-10 rounded-lg max-w-[650px] w-full">
         <div className="flex w-full justify-center flex-col items-center">
           <Image
-            src="/images/brand/icon.png"
+            src="/images/brand/logo.svg"
             width={95}
             height={69}
             alt="Logo"

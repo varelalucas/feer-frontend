@@ -3,7 +3,6 @@
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -17,7 +16,7 @@ export const ImagesMarquee = ({ photo }: { photo: string }) => {
       </DialogTrigger>
       <DialogContent className="lg:min-w-[1400px]" aria-setsize={800}>
         <DialogHeader>
-          <DialogTitle>Visualicação da imagem</DialogTitle>
+          <DialogTitle>Visualização da imagem</DialogTitle>
         </DialogHeader>
         <img className="aspect-video marquee-item w-[90vw]" src={photo} />
       </DialogContent>
