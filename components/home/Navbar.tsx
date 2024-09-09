@@ -57,7 +57,7 @@ export const Navbar = ({ dark }: { dark?: boolean }) => {
             </ul>
           </div>
           <Link href="/whatsapp" target="_blank">
-            <Button className="text-2xl px-[30px] py-[15px] h-[45px] rounded-sm bg-theme-500">
+            <Button className="text-2xl px-[30px] py-[15px] h-[45px] bg-theme-500">
               Fale conosco
             </Button>
           </Link>
