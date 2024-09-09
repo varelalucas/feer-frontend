@@ -52,13 +52,13 @@ export default async function Home() {
             </p>
             <Link href="/whatsapp" target="_blank">
               <div className="block lg:hidden">
-                <Button className="text-sm px-[30px] py-[15px] h-[45px]  rounded-sm bg-theme-500">
+                <Button className="text-sm px-[30px] py-[15px] h-[45px] bg-theme-500">
                   Contate-nos
                 </Button>
               </div>
               <div className="hidden lg:block">
                 <Button
-                  className="text-2xl px-[30px] py-[15px] h-[45px]  rounded-sm bg-theme-500"
+                  className="text-2xl px-[30px] py-[15px] h-[45px] bg-theme-500"
                   size="lg"
                 >
                   Contate-nos
